@@ -1,0 +1,22 @@
+package Cucumberrunner;
+
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = {"src/test/resources/feature"},glue = {"Stepdefinitition"},
+        plugin = {"pretty",
+                "html:target/cucumber.html",
+                "json:target/Cucumber.json",
+                "junit:target/Cucumber.xml",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
+        monochrome = true,
+        dryRun=false,
+         tags = "@login")
+public class cucumberTestRunner
+{
+
+}
